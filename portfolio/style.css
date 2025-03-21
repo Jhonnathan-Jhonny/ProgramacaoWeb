@@ -1,0 +1,152 @@
+/* Estilos globais */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    margin-left: 15px;
+}
+
+/* Hero Section */
+header {
+    padding: 150px 0;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 40px;
+}
+
+header .lead {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+header .btn {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border-radius: 25px;
+}
+
+/* Espaçamento para o navbar fixo */
+section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    scroll-margin-top: 50px; 
+}
+
+/* Títulos das seções */
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #1e3c72;
+}
+
+/* Cards de experiência */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Listas */
+.list-group-item {
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #4b6cb7;
+}
+
+.list-group-item a {
+    color: #4b6cb7;
+    text-decoration: none;
+}
+
+.list-group-item a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do botão "Voltar ao Topo" */
+#btnTopo {
+    display: none; /* Esconde o botão inicialmente */
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da direita da tela */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    border-radius: 50%; /* Deixa o botão redondo */
+    width: 50px; /* Largura do botão */
+    height: 50px; /* Altura do botão */
+    padding: 0; /* Remove o padding padrão */
+    display: flex; /* Centraliza o ícone */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o botão */
+    transition: opacity 0.3s, transform 0.3s; /* Efeito de transição suave */
+}
+
+#btnTopo:hover {
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 30px 0;
+    margin-top: 60px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
