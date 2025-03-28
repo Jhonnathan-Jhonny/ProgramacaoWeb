@@ -8,7 +8,6 @@ export class Biblioteca {
         this.capacidadeMaxima = capacidade;
     }
 
-    // Método para adicionar um livro à biblioteca
     adicionarLivro(livro: Livro): void {
         if (this.livros.length < this.capacidadeMaxima) {
             this.livros.push(livro);
@@ -18,7 +17,6 @@ export class Biblioteca {
         }
     }
 
-    // Método para listar todos os livros disponíveis
     listarLivros(): void {
         if (this.livros.length === 0) {
             console.log("A biblioteca não possui livros disponíveis.");
