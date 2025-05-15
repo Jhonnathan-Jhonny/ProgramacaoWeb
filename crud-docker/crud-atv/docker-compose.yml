@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    container_name: carros_db
+    environment:
+      POSTGRES_USER: carros_user       # Alterado de 'postgres'
+      POSTGRES_PASSWORD: carros_pass   # Senha mais segura
+      POSTGRES_DB: carros_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U carros_user -d carros_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: carros_app
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=carros_user      # Deve corresponder ao POSTGRES_USER
+      - DB_PASS=carros_pass      # Deve corresponder ao POSTGRES_PASSWORD
+      - DB_NAME=carros_db
+      - DB_DIALECT=postgres
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./package.json:/usr/src/app/package.json
+      - ./package-lock.json:/usr/src/app/package-lock.json
+      - /usr/src/app/node_modules
+
+volumes:
+  postgres_data:
